@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//Kernel
 __global__ void square(float * d_out, float * d_in){
     int idx = threadIdx.x;
     float f = d_in[idx];
@@ -30,6 +31,8 @@ int main(int argc, char ** argv) {
 
 	// launch the kernel
 	square<<<dim3(2,1,1), dim3(32,1,1)>>>(d_out, d_in);
+	//2 blocks in x, 1 in y, 1 in z
+	//32 threads in x, 1 in y, 1 in z ... inside each block
 
 	// copy back the result array to the CPU
 	cudaMemcpy(h_out, d_out, ARRAY_BYTES, cudaMemcpyDeviceToHost);
