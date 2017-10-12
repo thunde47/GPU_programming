@@ -1,35 +1,12 @@
 NVCC=nvcc
 
-###################################
-# These are the default install   #
-# locations on most linux distros #
-###################################
-
+#Opencv library path and header files
 OPENCV_LIBPATH=/usr/lib
 OPENCV_INCLUDEPATH=/usr/include
-
-###################################################
-# On Macs the default install locations are below #
-###################################################
-
-#OPENCV_LIBPATH=/usr/local/lib
-#OPENCV_INCLUDEPATH=/usr/local/include
-
-# or if using MacPorts
-
-#OPENCV_LIBPATH=/opt/local/lib
-#OPENCV_INCLUDEPATH=/opt/local/include
-
 OPENCV_LIBS=-lopencv_core -lopencv_imgproc -lopencv_highgui
 
-CUDA_INCLUDEPATH=/usr/local/cuda-5.0/include
-
-######################################################
-# On Macs the default install locations are below    #
-# ####################################################
-
-#CUDA_INCLUDEPATH=/usr/local/cuda/include
-#CUDA_LIBPATH=/usr/local/cuda/lib
+#CUDA header files
+CUDA_INCLUDEPATH=/usr/local/cuda-7.5/include
 
 NVCC_OPTS=-O3 -arch=sm_20 -Xcompiler -Wall -Xcompiler -Wextra -m64
 

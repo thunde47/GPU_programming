@@ -21,6 +21,7 @@
 
 #Temp files
 *.*~
+*~
 
 build
 bin
