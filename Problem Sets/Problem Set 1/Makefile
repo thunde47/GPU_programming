@@ -1,12 +1,12 @@
 NVCC=nvcc
 
 #Opencv library path and header files
-OPENCV_LIBPATH=/usr/lib
-OPENCV_INCLUDEPATH=/usr/include
-OPENCV_LIBS=-lopencv_core -lopencv_imgproc -lopencv_highgui
+OPENCV_LIBPATH=/usr/local/lib
+OPENCV_INCLUDEPATH=/usr/local/include/opencv2
+OPENCV_LIBS=-lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs
 
 #CUDA header files
-CUDA_INCLUDEPATH=/usr/local/cuda-7.5/include
+CUDA_INCLUDEPATH=/usr/local/cuda-8.0/include
 
 NVCC_OPTS=-O3 -arch=sm_20 -Xcompiler -Wall -Xcompiler -Wextra -m64
 
