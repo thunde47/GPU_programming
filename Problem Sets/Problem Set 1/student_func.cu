@@ -52,7 +52,7 @@ void rgba_to_greyscale(const uchar4* const rgbaImage,
   //calculate a 1D offset
   int i = blockIdx.y * blockDim.y + threadIdx.y;
   int j = blockIdx.x * blockDim.x + threadIdx.x;
-  int index = j + numCols * i;
+  int index = j + numRows * i;
   uchar4 color = rgbaImage[index];
   unsigned char grey = (unsigned char)(0.299f*color.x+ 0.587f*color.y + 0.114f*color.z);
   greyImage[index]=grey;
